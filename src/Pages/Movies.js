@@ -1,8 +1,8 @@
 import React from 'react';
-import Genre from './Genre';
+import Discover from './Discover';
 function Movies() {
   return <div>Movies Component
- <Genre/>
+ <Discover/>
 
   </div>;
   

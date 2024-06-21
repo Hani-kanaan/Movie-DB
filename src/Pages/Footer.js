@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
  
 const Footer = () => {
   const data = [
-    {
-      icon: "fas fa-fire-alt",
-      name: "Trending",
-      path: "/trending" ,
-    },
+    
     {
       icon: "fas fa-film",
       name: "Movies",

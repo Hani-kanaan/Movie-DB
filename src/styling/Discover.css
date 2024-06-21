@@ -1,0 +1,74 @@
+/* Discover.css */
+
+.discover-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .genre-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .genre-buttons button {
+    background-color: #f5c518;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .genre-buttons button:hover,
+  .genre-buttons button.active {
+    background-color: #ffeb3b;
+  }
+  
+  .media-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .media-item {
+    background-color: #1c1c1c;
+    color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 22%;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .media-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #f5c518;
+  }
+  
+  .media-item h3 {
+    font-size: 18px;
+    margin: 10px;
+  }
+  
+  .media-item p {
+    font-size: 14px;
+    margin: 10px;
+  }
+  
+  .media-item h4 {
+    font-size: 12px;
+    margin: 10px;
+    color: #ccc;
+  }
+  .media-item h5{
+    margin: 10px;
+    font-size: 12px;
+  }
+  .media-item:hover {
+    transform: scale(1.05);
+  }
+  

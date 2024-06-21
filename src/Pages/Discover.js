@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import '../styling/Discover.css';
+
 const Access_key = "2f42c9c46dc617e01d40dc3578e8c3b3"
 
-const Genre = () => {
+const Discover = () => {
   const [selectedGenre, setSelectedGenre] = useState('movie'); // Default genre is 'movie'
   const [media, setMedia] = useState([]);
 
@@ -9,6 +11,7 @@ const Genre = () => {
   const fetchMedia = async (genre) => {
     try {                          
       const response = await fetch(`https://api.themoviedb.org/3/discover/${genre}?api_key=${Access_key}`);
+      console.log(response)
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
@@ -19,28 +22,25 @@ const Genre = () => {
     }
   };
 
-  // Use useEffect to fetch media when the component mounts or when the selected genre changes
   useEffect(() => {
     fetchMedia(selectedGenre);
   }, [selectedGenre]);
 
   return (
-    <div>
-      {/* Buttons to select different genres */}
-      <div>
-        <button onClick={() => setSelectedGenre('movie')}>Movie</button>
-        <button onClick={() => setSelectedGenre('comedy')}>Comedy</button>
-        <button onClick={() => setSelectedGenre('drama')}>Drama</button>
-        {/* Add more buttons for other genres as needed */}
+    <div className="discover-container">
+      <div className="genre-buttons">
+        <button className={selectedGenre === 'movie' ? 'active' : ''} onClick={() => setSelectedGenre('movie')}>Movies</button>
+        <button className={selectedGenre === 'tv' ? 'active' : ''} onClick={() => setSelectedGenre('tv')}>TV Series</button>
       </div>
 
-      {/* Display the media based on the selected genre */}
       <div className="media-list">
         {media.map((item) => (
           <div key={item.id} className="media-item">
             <img src={`https://image.tmdb.org/t/p/w500${item.poster_path}`} alt={item.title || item.name} />
             <h3>{item.title || item.name}</h3>
             <p>{item.overview}</p>
+            <h4>{item.release_date}</h4>
+            <h5>{item.vote_average}/10</h5>
           </div>
         ))}
       </div>
@@ -48,4 +48,4 @@ const Genre = () => {
   );
 };
 
-export default Genre;
+export default Discover;
