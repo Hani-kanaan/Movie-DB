@@ -5,6 +5,7 @@ import Trending from "./Pages/Trending";
 import Movies from "./Pages/Movies";
 import {BrowserRouter , Routes , Route} from "react-router-dom";
 import Pagination from './Pages/Pagination';
+import SingleMovie from './Pages/SingleMovie';
 function App() {
   return (
 <BrowserRouter>
@@ -18,6 +19,7 @@ function App() {
      {/* <Route path="/" element={<Trending />} exact /> */}
      <Route path="/movies" element={<Movies/>} /> 
      <Route path ="/trending" element={<Trending/>} ></Route>
+     <Route path="/movie/:id" element={<SingleMovie />} />
      {/* <Route path="*" element={<Error />} />  */}
     </Routes>
     <Footer/>

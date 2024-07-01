@@ -10,14 +10,10 @@ const Footer = () => {
       path: "/movies" ,
 
     },
-    {
-      icon: "fas fa-tv",
-      name: "TV Series",
-      path: "/series" ,
-    },
+
     {
       icon: "fas fa-search",
-      name: "Search",
+      name: "Search (coming soon)",
       path: "/search" ,
 
     },
