@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 const app = express();
@@ -9,12 +10,8 @@ const mongoDBURL = process.env.MONGODB_URL;
 
 //for parsing json body:
 app.use(express.json());
+app.use('/api/user', userRoutes);
 
-app.get("/", (request, response) => {
-  //console.log(request)
-  return response.status(234).send("helloo");
-});
-//app.use("/books", booksRoute);
 
 mongoose
   .connect(mongoDBURL)
