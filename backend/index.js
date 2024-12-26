@@ -16,3 +16,16 @@ app.use(cors({
   origin: "https://movie-db-t8nd.onrender.com",
   methods: ["GET", "POST", "PUT", "DELETE"],
 }));
+
+mongoose
+  .connect(mongoDBURL)
+  .then(() => {
+    console.log("app connected to DB");
+    app.listen(PORT, () => {
+      console.log(`app listening to port: ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+
